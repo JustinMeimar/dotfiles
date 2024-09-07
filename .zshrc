@@ -25,7 +25,6 @@ export CLASSPATH="$ANTLR_JAR:$CLASSPATH"
 alias antlr4="java -Xmx500M org.antlr.v4.Tool"
 alias grun='java org.antlr.v4.gui.TestRig'
 
-
 ### LLVM
 export LLVM_DIR=/home/justin/install/llvm/llvm-18/lib/cmake/llvm
 export MLIR_INS=/home/justin/install/llvm/llvm-18
@@ -33,10 +32,9 @@ export MLIR_DIR=$MLIR_INS/lib/cmake/mlir
 export PATH=$MLIR_INS/bin:$PATH
 
 ### Clang
-export C_INCLUDE_PATH=/usr/include:$HOME/install/llvm/llvm-18/include:$C_INCLUDE_PATH
-# export C_INCLUDE_PATH=$HOME/install/llvm/llvm-18/include:$C_INCLUDE_PATH
-export CPLUS_INCLUDE_PATH=$HOME/install/llvm/llvm-18/include:$CPLUS_INCLUDE_PATH
-export LIBRARY_PATH=$HOME/install/llvm/llvm-18/lib:$LIBRARY_PATH
+##export C_INCLUDE_PATH=/usr/include:$HOME/install/llvm/llvm-18/include:$C_INCLUDE_PATH
+##export CPLUS_INCLUDE_PATH=$HOME/install/llvm/llvm-18/include:$CPLUS_INCLUDE_PATH
+##export LIBRARY_PATH=$HOME/install/llvm/llvm-18/lib:$LIBRARY_PATH
 
 ### 415
 export PATH=$PATH:$HOME/CDOL/Tester/bin
@@ -46,7 +44,7 @@ export MODULAR_HOME=/home/justin/.modualr
 export EMSDK=/home/justin/installs/emsdk
 export EMSDK_NODE=/home/justin/installs/emsdk/node/18.20.3_64bit/bin/node
 
-alias python='python3'
+export PATH=/usr/bin:$PATH
 
 # Start Zellij automatically
 if [[ -z "$ZELLIJ" ]]; then
@@ -61,6 +59,6 @@ if [[ -z "$ZELLIJ" ]]; then
   fi
 fi
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+### Python
+alias python='python3'
+alias python3.8='/usr/bin/python3.8'

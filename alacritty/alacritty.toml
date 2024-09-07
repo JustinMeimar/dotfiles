@@ -6,21 +6,5 @@ text = "0x1d1f21"
 background = "0x1d1f21"
 foreground = "0xc5c8c6"
 
-[font.normal]
-family = "BlexMono Nerd Font Mono"
-style = "Medium"
-
-[font.bold]
-family = "BlexMono Nerd Font Mono"
-style = "Bold"
-
-[font.italic]
-family = "BlexMono Nerd Font Mono"
-style = "Italic"
-
-[font.bold_italic]
-family = "BlexMono Nerd Font Mono"
-style = "Bold Italic"
-
 [shell]
 program = "/usr/bin/zsh"
