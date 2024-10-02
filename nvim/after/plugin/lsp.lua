@@ -4,7 +4,6 @@ local lspconfig = require('lspconfig')
 local cmp_nvim_lsp = require('cmp_nvim_lsp')
 local capabilities = cmp_nvim_lsp.default_capabilities()
 
-
 -- Helper function for keybindings
 local on_attach = function(client, bufnr)
     local bufopts = { noremap=true, silent=true, buffer=bufnr }
@@ -16,11 +15,9 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
     vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
     vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
-    vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-    
+    vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts) 
     print(client.name .. " attached to buffer")
 end
-
 
 -- Configure clangd
 lspconfig.clangd.setup{
@@ -33,15 +30,18 @@ lspconfig.clangd.setup{
         "--header-insertion=iwyu"
     },
     on_attach = on_attach,
+    filetypes = { "c", "cpp", "objc", "objcpp" },  -- Specify filetypes
 }
 
--- Configure pyright (Python LSP) with enhanced settings
+-- Configure pyright (Python LSP)
 lspconfig.pyright.setup{
     capabilities = capabilities,
     on_attach = on_attach,
+    filetypes = { "python" },  -- Specify filetypes
     settings = {
         python = {
-            analysis = {
+            -- Your existing settings...
+          analysis = {
                 autoSearchPaths = true,
                 diagnosticMode = "workspace",
                 useLibraryCodeForTypes = true,
